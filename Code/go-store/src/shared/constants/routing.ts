@@ -1,3 +1,5 @@
 export const Routing = {
-  Login: `/login`,
+  Login: 'login',
+  Users: 'users',
+  Products: 'products',
 };
