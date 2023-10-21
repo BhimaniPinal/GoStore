@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IUserModel } from 'models/user';
 import { UserService } from 'services/user.service';
 import { Location } from '@angular/common';
@@ -10,12 +10,29 @@ import { Location } from '@angular/common';
 })
 export class UserFormComponent implements OnInit {
   user!: IUserModel;
-  constructor(private location: Location, private userService: UserService) {}
+  id!: number;
+  constructor(
+    private location: Location,
+    private userService: UserService,
+    private activatedRoute: ActivatedRoute
+  ) {}
   async ngOnInit() {
-    await this.userService.getUser(1).subscribe((response) => {
-      this.user = response;
+    await this.getUser();
+  }
+  async getUser() {
+    await this.activatedRoute.params.subscribe((params) => {
+      if (params) {
+        this.id = +(params as IParams).id;
+        this.userService.getUser(this.id).subscribe((response) => {
+          this.user = response;
+        });
+      }
     });
   }
 
   goBack = () => this.location.back();
+}
+
+interface IParams {
+  id: string;
 }
