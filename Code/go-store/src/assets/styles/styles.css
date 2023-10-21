@@ -8,6 +8,42 @@ html,
 body {
   height: 100%;
 }
+.w-100 {
+  width: 100px;
+}
+.max-100 {
+  max-width: 100px;
+}
+.max-150 {
+  max-width: 150px;
+}
+.max-200 {
+  max-width: 200px;
+}
+.max-250 {
+  max-width: 250px;
+}
+.max-300 {
+  max-width: 300px;
+}
+.max-350 {
+  max-width: 350px;
+}
+.max-400 {
+  max-width: 400px;
+}
+.max-450 {
+  max-width: 450px;
+}
+.max-500 {
+  max-width: 500px;
+}
+.max-600 {
+  max-width: 600px;
+}
+.max-700 {
+  max-width: 700px;
+}
 a {
   text-decoration: none !important;
   transition: all 0.3s;
