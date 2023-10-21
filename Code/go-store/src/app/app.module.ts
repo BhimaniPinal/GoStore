@@ -7,10 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { APP_SERIVCE_CONFIG, APP_CONFIG } from 'utils/appconfig.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './modules/component/component.module';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { CommonModule } from '@angular/common';
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [AppComponent],
   imports: [
     CommonModule,
     BrowserModule,
