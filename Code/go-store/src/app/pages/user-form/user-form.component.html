@@ -1,6 +1,12 @@
 <section>
   <div class="page-title-with-action">
-    <h1>{{ user ? user!.username : "Add New User" }}</h1>
+    <h1>
+      {{
+        user
+          ? user!.name!.firstname + " " + user!.name!.lastname
+          : "Add New User"
+      }}
+    </h1>
     <button mat-button mat-raised-button color="primary" (click)="goBack()">
       Back
     </button>
