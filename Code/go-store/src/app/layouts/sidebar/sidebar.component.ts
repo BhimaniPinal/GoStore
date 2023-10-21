@@ -10,5 +10,5 @@ import { Router } from '@angular/router';
   imports: [MatIconModule, MatListModule],
 })
 export class SidebarComponent {
-  constructor(private router: Router) {}
+  constructor() {}
 }

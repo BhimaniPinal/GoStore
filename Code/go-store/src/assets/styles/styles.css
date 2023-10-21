@@ -22,13 +22,39 @@ a {
   width: 175px;
 }
 .main-content {
-  margin: 0 10px;
-  margin-left: 185px !important;
+  margin-left: 190px !important;
+  /* margin-right: 20px !important; */
 }
+section {
+  margin: 0 10px;
+}
+.white-box {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 15px;
+}
+/* .white-box.small{padding: 10px;} */
+
 .menu-list {
   display: flex;
   color: #000000de;
 }
 .menu-title {
   padding-left: 10px;
+}
+.page-title-with-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.page-title-with-action .title {
+  color: var(--darkText);
+  margin-right: 20px;
+  margin-bottom: 14px;
+}
+.page-title-with-action .title span {
+  font-weight: 300;
 }
