@@ -28,4 +28,12 @@ export class ProductService {
   deleteProduct = (productId: number) => {
     return this.httpClient.delete<IProductModel>(`/api/products/${productId}`);
   };
+  getCategories = () => {
+    return this.httpClient.get<Array<string>>(`/api/products/categories`);
+  };
+  getCategoryProducts = (category: string) => {
+    return this.httpClient.get<Array<string>>(
+      `/api/products/category/${category}`
+    );
+  };
 }
