@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IProductModel } from 'models/product';
 import { ProductService } from 'services/product.service';
+import { Routing } from 'shared/constants/routing';
 
 @Component({
   selector: 'app-products',
@@ -19,11 +20,11 @@ export class ProductsComponent {
   }
 
   handleAddClick = () => {
-    console.log('Add button clicked!');
+    this.router.navigate([`/${Routing.Products}`, 'add']);
   };
 
   handleEditClick = (productId: number) => {
-    console.log(productId + 'product edited!');
-    // this.router.navigate([`/${Routing.Products}/${productId}`]);
+    // console.log(productId + 'product edited!');
+    this.router.navigate([`/${Routing.Products}`, productId]);
   };
 }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductFormComponent } from 'app/pages/product-form/product-form.component';
 import { ProductsComponent } from 'app/pages/products/products.component';
@@ -24,7 +25,7 @@ const routes: Routes = [
 export class ProductRoutingModule {}
 
 @NgModule({
-  imports: [CommonModule, ProductRoutingModule, MaterialModule],
+  imports: [CommonModule, ProductRoutingModule, MaterialModule, FormsModule],
   declarations: [ProductsComponent, ProductFormComponent],
 })
 export class ProductModule {}

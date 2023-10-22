@@ -1,1 +1,51 @@
-<h1>Product-form works!</h1>
+<section>
+  <div class="page-title-with-action">
+    <h1>
+      {{ product!.title ? product!.title : "Add New Product" }}
+    </h1>
+    <button mat-button mat-raised-button color="primary" (click)="goBack()">
+      Back
+    </button>
+  </div>
+  <div class="white-box">
+    <form (submit)="handleProductSubmit($event)" class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" name="title" [(ngModel)]="product!.title" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Price</mat-label>
+        <input matInput name="price" [(ngModel)]="product!.price" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Category</mat-label>
+        <mat-select name="category" [(ngModel)]="product!.category">
+          <mat-option *ngFor="let category of categories" value="category">{{
+            category
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          placeholder="Description"
+          name="description"
+          [(ngModel)]="product!.description"
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Image URL</mat-label>
+        <input
+          matInput
+          placeholder="http://imageurl.com"
+          name="image"
+          [(ngModel)]="product!.image"
+        />
+        <mat-icon matSuffix>attachment</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+      <button mat-raised-button (click)="goBack()" class="pl-1">Cancel</button>
+    </form>
+  </div>
+</section>

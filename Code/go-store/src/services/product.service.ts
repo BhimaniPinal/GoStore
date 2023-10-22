@@ -23,7 +23,10 @@ export class ProductService {
     return this.httpClient.post<IProductModel>(`/api/products`, product);
   };
   updateProduct = (product: IProductModel) => {
-    return this.httpClient.put<IProductModel>(`/api/products`, product);
+    return this.httpClient.put<IProductModel>(
+      `/api/products/${product!.id}`,
+      product
+    );
   };
   deleteProduct = (productId: number) => {
     return this.httpClient.delete<IProductModel>(`/api/products/${productId}`);
