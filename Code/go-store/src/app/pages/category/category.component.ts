@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError, of, Subscription } from 'rxjs';
 import { ProductService } from 'services/product.service';
+import { UserService } from 'services/user.service';
 
 @Component({
   selector: 'app-category',
@@ -8,14 +10,27 @@ import { ProductService } from 'services/product.service';
 })
 export class CategoryComponent {
   categories: Array<string> = [];
+  subscription!: Subscription;
 
   columns: string[] = ['name', 'action'];
+  photoes$ = this.userService.getPhotoes$.pipe(
+    catchError((error) => {
+      console.log(error);
+      return of([]);
+    })
+  );
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private userService: UserService
+  ) {}
   ngOnInit(): void {
-    this.productService.getCategories().subscribe((response) => {
-      this.categories = response;
-    });
+    this.subscription = this.productService
+      .getCategories()
+      .subscribe((response) => {
+        this.categories = response;
+      });
   }
 
   getCategoryProducts = (category: string) => {
@@ -23,4 +38,10 @@ export class CategoryComponent {
       console.log(response);
     });
   };
+
+  ngOnDesctroye() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 }
