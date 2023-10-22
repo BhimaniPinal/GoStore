@@ -28,6 +28,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/assets/styles/theme.scss",
+              "src/assets/styles/spacer.css",
               "src/assets/styles/styles.css"
             ],
             "scripts": []
@@ -86,6 +87,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/assets/styles/theme.scss",
+              "src/assets/styles/spacer.css",
               "src/assets/styles/styles.css"
             ],
             "scripts": []
