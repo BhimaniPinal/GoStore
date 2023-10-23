@@ -43,6 +43,15 @@
             mat-button
             mat-raised-button
             color="primary"
+            (click)="handleViewClick(element!.id)"
+          >
+            View
+          </button>
+          <button
+            mat-button
+            mat-raised-button
+            color="primary"
+            class="ml-1"
             (click)="handleEditClick(element!.id)"
           >
             Edit
@@ -54,4 +63,10 @@
       <tr mat-row *matRowDef="let row; columns: columns"></tr>
     </table>
   </div>
+  <app-product-details [product]="product" *ngIf="product">
+    <app-dialog-form [title]="'Product Details'">
+      <h1>Title</h1>
+      <app-product-details></app-product-details>
+    </app-dialog-form>
+  </app-product-details>
 </section>

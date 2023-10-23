@@ -3,6 +3,7 @@ export const Routing = {
   Users: 'users',
   UserManage: 'users/:id',
   Products: 'products',
+  ProductManage: 'products/:id',
   Dashboard: 'dashboard',
   Category: 'category',
 };

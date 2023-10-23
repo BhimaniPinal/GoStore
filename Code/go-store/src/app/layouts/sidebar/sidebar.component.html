@@ -1,42 +1,22 @@
 <mat-nav-list>
-  <mat-list-item>
-    <a
-      [routerLink]="'/dashboard'"
-      routerLinkActive="active"
-      ariaCurrentWhenActive="page"
-      class="menu-list"
-    >
+  <mat-list-item [routerLink]="'/dashboard'">
+    <div class="menu-list">
       <mat-icon>dashboard</mat-icon><span class="menu-title">Dashboard</span>
-    </a>
+    </div>
   </mat-list-item>
-  <mat-list-item>
-    <a
-      [routerLink]="'/users'"
-      routerLinkActive="active"
-      ariaCurrentWhenActive="page"
-      class="menu-list"
-    >
+  <mat-list-item [routerLink]="'/users'">
+    <div class="menu-list">
       <mat-icon>people</mat-icon><span class="menu-title">Users</span>
-    </a>
+    </div>
   </mat-list-item>
-  <mat-list-item>
-    <a
-      [routerLink]="'/category'"
-      routerLinkActive="active"
-      ariaCurrentWhenActive="page"
-      class="menu-list"
-    >
+  <mat-list-item [routerLink]="'/category'">
+    <div class="menu-list">
       <mat-icon>category</mat-icon><span class="menu-title">Category</span>
-    </a>
+    </div>
   </mat-list-item>
-  <mat-list-item>
-    <a
-      [routerLink]="'/products'"
-      routerLinkActive="active"
-      ariaCurrentWhenActive="page"
-      class="menu-list"
-    >
+  <mat-list-item [routerLink]="'/products'">
+    <div class="menu-list">
       <mat-icon>inventory</mat-icon><span class="menu-title">Products</span>
-    </a>
+    </div>
   </mat-list-item>
 </mat-nav-list>

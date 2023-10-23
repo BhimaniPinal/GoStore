@@ -7,11 +7,22 @@
       Back
     </button>
   </div>
+  {{ roomForm.valid }}
   <div class="white-box">
-    <form (submit)="handleProductSubmit($event)" class="example-form">
+    <form
+      #roomForm="ngForm"
+      (submit)="handleProductSubmit($event)"
+      class="example-form"
+    >
       <mat-form-field class="example-full-width">
         <mat-label>Title</mat-label>
-        <input matInput type="text" name="title" [(ngModel)]="product!.title" />
+        <input
+          matInput
+          type="text"
+          name="title"
+          [(ngModel)]="product!.title"
+          required
+        />
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Price</mat-label>
@@ -45,7 +56,7 @@
         <mat-icon matSuffix>attachment</mat-icon>
       </mat-form-field>
       <button mat-raised-button color="primary" type="submit">Submit</button>
-      <button mat-raised-button (click)="goBack()" class="pl-1">Cancel</button>
+      <button mat-raised-button (click)="goBack()" class="ml-1">Cancel</button>
     </form>
   </div>
 </section>

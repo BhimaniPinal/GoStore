@@ -17,10 +17,8 @@ function initFactory(initService: InitService) {
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
     HttpClientModule,
     AppRoutingModule,
     ComponentsModule,

@@ -4,6 +4,13 @@ import { Routing } from 'shared/constants/routing';
 import { DashboardComponent } from 'app/pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from 'app/pages/page-not-found/page-not-found.component';
 
+const userModule = () =>
+  import('./../page-modules/user.module').then((m) => m.UserModule);
+const categoryModule = () =>
+  import('./../page-modules/category.module').then((m) => m.CategoryModule);
+const productModule = () =>
+  import('./../page-modules/product.module').then((m) => m.ProductModule);
+
 const routes: Routes = [
   {
     path: Routing.Dashboard,
@@ -27,19 +34,30 @@ const routes: Routes = [
   // },
   {
     path: Routing.Users,
-    loadChildren: () =>
-      import('./../page-modules/user.module').then((m) => m.UserModule),
+    loadChildren: userModule,
   },
   {
     path: Routing.Category,
-    loadChildren: () =>
-      import('./../page-modules/category.module').then((m) => m.CategoryModule),
+    loadChildren: categoryModule,
   },
   {
     path: Routing.Products,
-    loadChildren: () =>
-      import('./../page-modules/product.module').then((m) => m.ProductModule),
+    loadChildren: productModule,
   },
+  // {
+  //   path: Routing.Products,
+  //   loadChildren: () =>
+  //     import('../../pages/products/products.component').then(
+  //       (m) => m.ProductsComponent
+  //     ),
+  // },
+  // {
+  //   path: Routing.ProductManage,
+  //   loadComponent: () =>
+  //     import('../../pages/product-form/product-form.component').then(
+  //       (m) => m.ProductFormComponent
+  //     ),
+  // },
   { path: '', redirectTo: Routing.Dashboard, pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

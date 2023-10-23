@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ProductService } from 'services/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IProductModel } from 'models/product';
 
 import { Location } from '@angular/common';
+import { Routing } from 'shared/constants/routing';
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
@@ -23,7 +24,8 @@ export class ProductFormComponent {
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {}
   async ngOnInit() {
     await this.getProduct();
@@ -53,6 +55,8 @@ export class ProductFormComponent {
       this.productService.addProduct(this.product).subscribe((response) => {
         console.log(response);
       });
+
+    this.router.navigate([`/${Routing.Products}`]);
   };
   goBack = () => this.location.back();
 }

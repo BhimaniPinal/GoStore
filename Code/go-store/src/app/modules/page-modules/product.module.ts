@@ -5,6 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductFormComponent } from 'app/pages/product-form/product-form.component';
 import { ProductsComponent } from 'app/pages/products/products.component';
 import { MaterialModule } from '../material/material.module';
+import { ProductDetailsComponent } from 'app/pages/product-details/product-details.component';
+import { ComponentsModule } from '../component/component.module';
 
 const routes: Routes = [
   {
@@ -25,7 +27,17 @@ const routes: Routes = [
 export class ProductRoutingModule {}
 
 @NgModule({
-  imports: [CommonModule, ProductRoutingModule, MaterialModule, FormsModule],
-  declarations: [ProductsComponent, ProductFormComponent],
+  imports: [
+    ProductRoutingModule,
+    CommonModule,
+    ComponentsModule,
+    MaterialModule,
+    FormsModule,
+  ],
+  declarations: [
+    ProductsComponent,
+    ProductFormComponent,
+    ProductDetailsComponent,
+  ],
 })
 export class ProductModule {}
